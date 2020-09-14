@@ -1,0 +1,18 @@
+Program requires directory with three images provided by Dr. Gudivada in them.
+
+Test1:
+Execute program without directory passed as argument.
+
+Result: Console output "Directory does not exist or is empty."
+
+Test2:
+Execute program with empty directory.
+
+Result: Console output "Directory does not exist or is empty."
+
+Test3:
+Execute program with empty directory.
+
+Result: Console output "Directory does not exist or is empty."
+
+These are only types of tests conducted for program. The rest of the program is self contained and cannot deviate from normal operation if the requirements are meet.
