@@ -28,16 +28,22 @@ public class Interpolation {
 	
 	public static void main(String args[]) throws IOException {
 	    System.loadLibrary( Core.NATIVE_LIBRARY_NAME );
-	    
+	     
+	    if(args.length == 0) {
+	    	System.out.println("No directory submitted.");
+	    	System.exit(0);
+	    }
 	    // file directory of images
-	    File dir = new File("../Interpolation/src/images");
+	    File dir = new File(args[0]);
 	    
-	    if(dir.exists()) {
+	    System.out.println("Directory:" + dir.toString());
+	    
+	    if(dir.exists() && dir.listFiles().length > 0) {
 	    	for (File f : dir.listFiles()) {
 	    		addMat(f);
 	    	}
 	    }else {
-	    	System.out.println("File does not exist");
+	    	System.out.println("Directory does not exist or is empty.");
 	    	System.exit(0);
 	    }
 	    
