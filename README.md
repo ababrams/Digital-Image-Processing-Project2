@@ -1,10 +1,25 @@
 Program written in Java/Eclipse.
 
-It can be ran through Eclipse with Browser.java holding the main class for configuration. If it doesn't already, eclipse needs opencv added as a User Library.
+It can be ran through Eclipse with Interpolation.java holding the main class for configuration. If it doesn't already, eclipse needs opencv added as a User Library.
+
 Running through command line.
 
-{insert commands to run here}
+cd to src file where Interpolation.java is located
 
+To compile:
+javac -cp /C:/... file path to open cv jar:. Interpolation.java
+
+example: (personal using Ubuntu)
+javac -cp /home/corwin/opencv_build/opencv/build/bin/opencv-440.jar:. Interpolation.java
+
+To run:
+java -cp /C:/ ... file path to open cv jar:. -Djava.library.path=/C:/ ... path to open cv library Interpolation
+
+example: (personal using Ubuntu)
+java -cp /home/corwin/opencv_build/opencv/build/bin/opencv-440.jar:.  -Djava.library.path=/home/corwin/opencv_build/opencv/build/lib/ Interpolation
+
+The photos used are contained within the project directory, so it's self contained. Running the program displays the Image and metadata is printed to verify image and interpolation method used.
+To navigate the photos press n-next, p-previous, q-quit the program. This was used to cycle between the photos to make observations between different methods used.
 
 _break_
 
