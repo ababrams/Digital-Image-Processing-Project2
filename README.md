@@ -13,12 +13,12 @@ example: (personal using Ubuntu)
 javac -cp /home/corwin/opencv_build/opencv/build/bin/opencv-440.jar:. Interpolation.java
 
 To run:
-java -cp /C:/ ... file path to open cv jar:. -Djava.library.path=/C:/ ... path to open cv library Interpolation
+java -cp /C:/ ... file path to open cv jar:. -Djava.library.path=/C:/ ... path to open cv library Interpolation ?C:/ directory to images
 
 example: (personal using Ubuntu)
-java -cp /home/corwin/opencv_build/opencv/build/bin/opencv-440.jar:.  -Djava.library.path=/home/corwin/opencv_build/opencv/build/lib/ Interpolation
+java -cp /home/corwin/opencv_build/opencv/build/bin/opencv-440.jar:.  -Djava.library.path=/home/corwin/opencv_build/opencv/build/lib/ Interpolation /home/corwin/eclipse-workspace/images
 
-The photos used are contained within the project directory, so it's self contained. Running the program displays the Image and metadata is printed to verify image and interpolation method used.
+The three photos provided by Dr.Gudivada will need to be in a directory and passed as argument when executing program. Running the program displays the Image and metadata is printed to verify image and interpolation method used.
 To navigate the photos press n-next, p-previous, q-quit the program. This was used to cycle between the photos to make observations between different methods used.
 
 _break_
