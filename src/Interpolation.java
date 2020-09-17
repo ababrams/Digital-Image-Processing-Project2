@@ -20,6 +20,7 @@ import org.opencv.imgcodecs.Imgcodecs;
 import org.opencv.imgproc.Imgproc;
 
 public class Interpolation {
+    // intialize variables
 	static ArrayList<Mat> mats = new ArrayList<Mat>();
 	static ArrayList<BufferedImage> images = new ArrayList<BufferedImage>();
 	static ArrayList<String> labelText = new ArrayList<String>();
@@ -28,16 +29,20 @@ public class Interpolation {
 	
 	public static void main(String args[]) throws IOException {
 	    System.loadLibrary( Core.NATIVE_LIBRARY_NAME );
-	     
+	    
+	    
+	    // check to ensure arguments are passed
 	    if(args.length == 0) {
 	    	System.out.println("No directory submitted.");
 	    	System.exit(0);
 	    }
-	    // file directory of images
+	    // directory of images
 	    File dir = new File(args[0]);
 	    
 	    System.out.println("Directory:" + dir.toString());
 	    
+	    
+	    // add images from directory into list of Matrix objects
 	    if(dir.exists() && dir.listFiles().length > 0) {
 	    	for (File f : dir.listFiles()) {
 	    		addMat(f);
@@ -47,6 +52,7 @@ public class Interpolation {
 	    	System.exit(0);
 	    }
 	    
+	    // calling listner method
 	    listener();
 
 	    Mat src = mats.get(0);
@@ -84,11 +90,14 @@ public class Interpolation {
 	  	    
 	   }
 	
+	
+	// reads file into Matrix
 	public static void addMat(File f) {
 		Mat img = Imgcodecs.imread(f.toString());
 		mats.add(img);
 	}
 	
+	// Takes the matrix, type of interpolation method, and scales the image according to the ratio and a new Buffered Image to a list to be displayed
 	public static void interpolation(Mat src, int inter, double ratio) {
 		
 		Mat dst = new Mat();
@@ -170,6 +179,8 @@ public class Interpolation {
 		showFrame();
 	}
 	
+	
+	//setup frame display
 	public static void showFrame() {
 		BufferedImage buf = images.get(index);
 		ImageIcon icon = new ImageIcon(buf);
